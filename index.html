@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>    
+<html lang="en">    
+<head>    
+    <meta charset="UTF-8">  
+
+      
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>   
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>    
+    <title>复制按钮</title>    
+</head>    
+<body>    
+<span id="target">我是一段as优美的文字aaa</span>
+<a class="btn" data-clipboard-action="copy" data-clipboard-target="#target" id="copy_btn">    
+    复制按钮    
+</a>    
+    
+</body>    
+<script>    
+    $(document).ready(function(){       
+        var clipboard = new Clipboard('#copy_btn');    
+        clipboard.on('success', function(e) {    
+            alert("复制成功，即将跳转到微信",1500); 
+            // if(confirm('复制成功，即将跳转到微信?')==false)return false;   
+            e.clearSelection(); 
+            console.log(123)
+            window.location.href="www.baidu.com";   
+        });    
+    });    
+</script>    
+</html>  
